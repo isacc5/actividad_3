@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Colombia</title>
+    <link rel="stylesheet" href="css/carro_compra.css">
+</head>
+<body>
+    <!-- Anuncio -->
+    <div class="announcement">
+        🚧 ¡Estamos trabajando para darte lo mejor! Algunas funciones podrían no estar disponibles. 🚧
+    </div>
+
+    <!-- Encabezado -->
+    <header class="header">
+        <h1>🛒 Carrito de Compras</h1>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="container">
+        <!-- Lista de productos -->
+        <section class="products">
+            <div class="product">
+                <h2>Producto 1</h2>
+                <p>Precio: $800.000 COP</p>
+                <button onclick="addToCart('Producto 1', 800000)">Añadir al carrito</button>
+            </div>
+            <div class="product">
+                <h2>Producto 2</h2>
+                <p>Precio: $300.000 COP</p>
+                <button onclick="addToCart('Producto 2', 300000)">Añadir al carrito</button>
+            </div>
+            <div class="product">
+                <h2>Producto 3</h2>
+                <p>Precio: $140.000 COP COP</p>
+                <button onclick="addToCart('Producto 3', 140000)">Añadir al carrito</button>
+            </div>
+        </section>
+
+        <!-- Carrito -->
+        <aside class="cart">
+            <h2>Tu Carrito</h2>
+            <ul id="cart-items">
+                <li>Tu carrito está vacío 🛍️</li>
+            </ul>
+            <p id="total-price">Total: $0 COP</p>
+            <button class="checkout-button" onclick="openPaymentModal()">Ir a pagar</button>
+        </aside>
+    </main>
+
+    <!-- Modal de Pago -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePaymentModal()">&times;</span>
+            <h2>Procesar Pago</h2>
+            <form id="payment-form" onsubmit="processPayment(event)">
+                <label for="card-number">Número de Tarjeta:</label>
+                <input type="text" id="card-number" required>
+
+                <label for="installments">Cuotas:</label>
+                <select id="installments" required>
+                    <option value="1">1 cuota</option>
+                    <option value="3">3 cuotas</option>
+                    <option value="6">6 cuotas</option>
+                    <option value="12">12 cuotas</option>
+                </select>
+
+                <label for="warranty">Garantía:</label>
+                <select id="warranty" required>
+                    <option value="ninguna">Ninguna</option>
+                    <option value="3-meses">3 meses</option>
+                    <option value="1-año">1 año</option>
+                </select>
+
+                <button type="submit">Realizar Pago</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Términos y condiciones -->
+    <footer class="footer">
+        <h3>Normas y Condiciones</h3>
+        <p>
+            Al utilizar este sitio web, aceptas las políticas de privacidad y los términos de uso. 
+            Garantías válidas solo en territorio colombiano. Las cuotas aplican con bancos aliados.
+        </p>
+    </footer>
+
+    <script src="carro.js"></script>
+    
+</body>
+</html>

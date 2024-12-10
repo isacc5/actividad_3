@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alquiler de Autos - Catálogo</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body >
+    <header>
+        <h1>Alquiler de Autos Premium</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="autos.html" class="active">Autos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h2>Catalogo de carros de alta gama</h2>
+    <main>
+        <section class="cars-gallery">
+            <!-- Tarjeta 1 -->
+            <div class="car-card" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8" alt="BMW Serie 5">
+                <div class="car-details">
+                    <h3>BMW Serie 5</h3>
+                    <h3>Precio: 800.000 COP diarios</h3>
+                    <p>Elegancia y confort</p>
+                    <button onclick="selectCar('BMW Serie 5', 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8')">
+                        Seleccionar
+                    </button>
+                </div>
+            </div>
+             <!-- Modal para selección del carro -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8" alt="Carro" class="modal-image">
+            <h2 id="modal-title"></h2>
+            <p>¿Listo para la aventura?</p>
+            <div class="modal-buttons">
+                <button onclick="acceptCar()">Aceptar</button>
+                <button onclick="closeModal()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+            <!-- Tarjeta 2 -->
+            <div class="car-card" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888" alt="Mercedes Clase E">
+                <div class="car-details">
+                    <h3>Mercedes Clase E</h3>
+                    <h3>Precio: 900.000 COP diarios</h3>
+                    <p>Elegancia y confort</p>
+                    <button onclick="selectCar('Mercedes Clase E', 'https://images.unsplash.com/photo-1583121274602-3e2820c69888')">
+                        Seleccionar
+                    </button>
+                </div>
+            </div>
+            <!-- Tarjeta 3 -->
+            <div class="car-card" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                <img src="https://images.unsplash.com/photo-1553440569-bcc63803a83d" alt="Audi A6">
+                <div class="car-details">
+                    <h3>Audi A6</h3>
+                    <h3>Precio: 750.000 COP diarios</h3>
+                    <p>Tecnología innovadora</p>
+                    <button onclick="selectCar('Audi A6', 'https://images.unsplash.com/photo-1553440569-bcc63803a83d')">
+                        Seleccionar
+                    </button>
+                </div>
+            </div>
+              <!-- Tarjeta 4 -->
+              <div class="car-card" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                <img src="https://dealerimages.dealereprocess.com/image/upload/2871694" alt="Lexus IS 300">
+                <div class="car-details">
+                    <h3>Lexus IS 300</h3>
+                    <h3>Precio: 600.000 COP diarios</h3>
+                    <p>Tecnología innovadora</p>
+                    <button onclick="selectCar('Lexus IS 300', 'https://dealerimages.dealereprocess.com/image/upload/2871694')">
+                        Seleccionar
+                    </button>
+                </div>
+            </div>
+        </section>
+        <h2>Catalogo de carros de media gama</h2>
+        <section class="cars-gallery" data-aos="fade-down" data-aos-duration="900">
+            <!-- Tarjeta 1 -->
+            <div class="car-card" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                <img src="https://cdn-datak.motork.net/configurator-imgs/cars/es/original/TOYOTA/COROLLA-SEDAN/44129_SEDAN-4-DOORS/toyota-corolla-sedan-front-view.jpg" alt="Toyota Corolla">
+                <div class="car-details">
+                    <h3>Toyota Corolla</h3>
+                    <h3>Precio: 300.000 COP diarios</h3>
+                    <p>Confiable y económico</p>
+                    <button onclick="selectCar('Toyota Corolla', 'https://cdn-datak.motork.net/configurator-imgs/cars/es/original/TOYOTA/COROLLA-SEDAN/44129_SEDAN-4-DOORS/toyota-corolla-sedan-front-view.jpg')">
+                        Seleccionar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="car-card" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                <img src="https://media.ed.edmunds-media.com/honda/civic/2025/oem/2025_honda_civic_sedan_si_fq_oem_1_1280.jpg" alt="Honda Civic">
+                <div class="car-details">
+                    <h3>Honda Civic</h3>
+                    <h3>Precio: 350.000 COP diarios</h3>
+                    <p>Elegancia y confort</p>
+                    <button onclick="selectCar('Honda Civic', 'https://media.ed.edmunds-media.com/honda/civic/2025/oem/2025_honda_civic_sedan_si_fq_oem_1_1280.jpg')">
+                        Seleccionar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="car-card" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                <img src="https://www.automontana.com/globalassets/cars/mazda-3-sedan-gen-7/galeria/web_mazda_mazda3sdn_800x800.jpg" alt="Mazda 3">
+                <div class="car-details">
+                    <h3>Mazda 3</h3>
+                    <h3>Precio: 300.000 COP diarios</h3>
+                    <p>Tecnología innovadora</p>
+                    <button onclick="selectCar('Mazda 3', 'https://www.automontana.com/globalassets/cars/mazda-3-sedan-gen-7/galeria/web_mazda_mazda3sdn_800x800.jpg')">
+                        Seleccionar
+                    </button>
+                </div>
+            </div>
+              <!-- Tarjeta 4 -->
+              <div class="car-card" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                <img src="https://acnews.blob.core.windows.net/imgnews/large/NAZ_024747e19c0942fe832ea11b6ff364c5.jpg" alt="Chevrolet Aveo">
+                <div class="car-details">
+                    <h3>Chevrolet Aveo</h3>
+                    <h3>Precio: 250.000 COP diarios</h3>
+                    <p>Compactos y Precios</p>
+                    <button onclick="selectCar('Chevrolet Aveo', 'https://acnews.blob.core.windows.net/imgnews/large/NAZ_024747e19c0942fe832ea11b6ff364c5.jpg')">
+                        Seleccionar
+                    </button>
+                </div>
+            </div>
+        </section>
+        <h2>Catalogo de carros de baja gama</h2>
+        <section class="cars-gallery" data-aos="fade-down" data-aos-duration="900">
+            <!-- Tarjeta 1 -->
+            <div class="car-card" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                <img src="https://agenciauto.com/wp-content/uploads/2021/02/10797-color-vehiculo-nuevo-logan.jpg" alt="Renault Logan">
+                <div class="car-details">
+                    <h3>Renault Logan</h3>
+                    <h3>Precio: 150.000 COP diarios.</h3>
+                    <p>Confiable y económico</p>
+                    <button onclick="selectCar('Renault Logan', 'https://agenciauto.com/wp-content/uploads/2021/02/10797-color-vehiculo-nuevo-logan.jpg')">
+                        Seleccionar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="car-card" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                <img src="https://www.elcarrocolombiano.com/wp-content/uploads/2022/02/20220202-CHEVROLET-SPARK-FIN-DE-PRODUCCION-01.jpg" alt="Chevrolet Spark">
+                <div class="car-details">
+                    <h3>Chevrolet Spark</h3>
+                    <h3>Precio: 130.000 COP diarios</h3>
+                    <p>Confiable y económico</p>
+                    <button onclick="selectCar('Chevrolet Spark', 'https://www.elcarrocolombiano.com/wp-content/uploads/2022/02/20220202-CHEVROLET-SPARK-FIN-DE-PRODUCCION-01.jpg')">
+                        Seleccionar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="car-card" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                <img src="https://autosdeprimera.com/wp-content/uploads/2023/07/kia-picanto-2024-a.jpg" alt="Kia Picanto">
+                <div class="car-details">
+                    <h3>Kia Picant</h3>
+                    <h3>Precio: 140.000 COP diarios</h3>
+                    <p>Confiable y económico</p>
+                    <button onclick="selectCar('Kia Picant', 'https://autosdeprimera.com/wp-content/uploads/2023/07/kia-picanto-2024-a.jpg')">
+                        Seleccionar
+                    </button>
+                </div>
+            </div>
+              <!-- Tarjeta 4 -->
+              <div class="car-card" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                <img src="https://www.vardi.com.co/wp-content/uploads/2021/04/March-scaled.jpg" alt="Nissan March">
+                <div class="car-details">
+                    <h3>Nissan March.</h3>
+                    <h3>Precio: 140.000 COP diarios</h3>
+                    <p>Confiable y económico</p>
+                    <button onclick="selectCar('Nissan March', 'https://www.vardi.com.co/wp-content/uploads/2021/04/March-scaled.jpg')">
+                        Seleccionar
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="gallery.js"></script>
+</body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</html>

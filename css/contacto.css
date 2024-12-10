@@ -1,0 +1,173 @@
+/* Variables CSS */
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #646cff;
+    --accent-color: #535bf2;
+    --text-color: #333;
+    --light-bg: #f9f9f9;
+    --dark-bg: #1a1a1a;
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background: linear-gradient(to right,#2c3e50, #2c3e50);
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+p {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.hero {
+    padding: 2rem;
+    background: #fff;
+    text-align: center;
+    margin: 1rem auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content h1 {
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+}
+
+.hero-content p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.contact-content h1 {
+    color: #2E7D32;
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+form {
+    max-width: 600px;
+    margin: 1rem auto;
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    transition: border 0.3s;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+form button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: background 0.3s;
+}
+
+form button:hover {
+    background: #2E7D32;
+}
+
+/*navegacion*/
+/* Header y navegación */
+.top-bar {
+    background: var(--dark-bg);
+    color: white;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info span {
+    margin-right: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.social-media a {
+    color: white;
+    margin-left: 1rem;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: var(--secondary-color);
+}
+
+.main-header {
+    background: var(--gradient);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.logo i {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+

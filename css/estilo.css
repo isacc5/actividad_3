@@ -1,0 +1,248 @@
+ /* Variables CSS */
+ :root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #646cff;
+    --accent-color: #535bf2;
+    --text-color: #333;
+    --light-bg: #f9f9f9;
+    --dark-bg: #1a1a1a;
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    position: relative;
+}
+h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #3498db;
+    margin: 10px auto;
+}
+h3{
+    font-family: Serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--light-bg);
+}
+
+header {
+    background: var(--gradient);
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Estilos para la galería de autos */
+.cars-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+    background-color: var(--light-bg);
+}
+
+.car-card {
+    width: 300px;
+    overflow: hidden;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.car-details {
+    padding: 1.5rem;
+    text-align: center;
+    background: var(--light-bg);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.car-details h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.car-details p {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.car-details .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* Animación de entrada para las capas de detalles */
+.car-card:hover .car-details {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    background: var(--dark-bg);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+.car-card button{
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenido del Modal */
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.3s ease;
+}
+
+/* Animación de aparición */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Imagen del Modal */
+.modal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Título */
+#modal-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Botones */
+.modal-buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-buttons button:first-of-type {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.modal-buttons button:first-of-type:hover {
+    background-color: #45a049;
+}
+
+.modal-buttons button:last-of-type {
+    background-color: #f44336;
+    color: white;
+}
+
+.modal-buttons button:last-of-type:hover {
+    background-color: #d32f2f;
+}

@@ -1,0 +1,714 @@
+ /* Variables CSS */
+ :root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #646cff;
+    --accent-color: #535bf2;
+    --text-color: #333;
+    --light-bg: #f9f9f9;
+    --dark-bg: #1a1a1a;
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+.contact-info span {
+    margin-right: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    position: relative;
+}
+h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: #3498db;
+    margin: 10px auto;
+}
+h3{
+    font-family: Serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--light-bg);
+}
+
+header {
+    background: var(--gradient);
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Estilos para la galería de autos */
+.cars-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+    background-color: var(--light-bg);
+}
+
+.car-card {
+    width: 300px;
+    overflow: hidden;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.car-details {
+    padding: 1.5rem;
+    text-align: center;
+    background: var(--light-bg);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.car-details h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.car-details p {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.car-details .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* Animación de entrada para las capas de detalles */
+.car-card:hover .car-details {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    background: var(--dark-bg);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+.car-card button{
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenido del Modal */
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    animation: slideIn 0.3s ease;
+}
+
+/* Animación de aparición */
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Imagen del Modal */
+.modal-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Título */
+#modal-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Botones */
+.modal-buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-buttons button:first-of-type {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.modal-buttons button:first-of-type:hover {
+    background-color: #45a049;
+}
+
+.modal-buttons button:last-of-type {
+    background-color: #f44336;
+    color: white;
+}
+
+.modal-buttons button:last-of-type:hover {
+    background-color: #d32f2f;
+}
+
+/* Variables CSS */
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #646cff;
+    --accent-color: #535bf2;
+    --text-color: #333;
+    --light-bg: #f9f9f9;
+    --dark-bg: #1a1a1a;
+    --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+/* Header y navegación */
+.top-bar {
+    background: var(--dark-bg);
+    color: white;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-info span {
+    margin-right: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.social-media a {
+    color: white;
+    margin-left: 1rem;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: var(--secondary-color);
+}
+
+.main-header {
+    background: var(--gradient);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.logo i {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Hero y Slider */
+.hero {
+    position: relative;
+    height: 80vh;
+}
+
+.slider-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider img {
+    width: 33.333%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.slider-text h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--secondary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Features Section */
+.features {
+    padding: 4rem 2rem;
+    background: var(--light-bg);
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+/* Quick Reserve Section */
+.quick-reserve {
+    padding: 4rem 2rem;
+    background: var(--gradient);
+    color: white;
+}
+
+.quick-reserve h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.reserve-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 4rem 2rem;
+    background: var(--light-bg);
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.rating {
+    color: gold;
+    margin-bottom: 1rem;
+}
+
+/* Brand Marquee */
+.brand-marquee {
+    padding: 2rem 0;
+    background: white;
+    overflow: hidden;
+}
+
+.brand-marquee h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.marquee {
+    position: relative;
+}
+
+.marquee-content {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.marquee-content img {
+    height: 180px;
+    margin: 0 3rem;
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+}
+
+.marquee-content img:hover {
+    filter: grayscale(0%);
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Footer */
+footer {
+    background: var(--dark-bg);
+    color: white;
+    padding: 3rem 2rem 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.footer-section p {
+    margin-bottom: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        text-align: center;
+        padding: 0.5rem;
+    }
+
+    .contact-info span {
+        display: block;
+        margin: 0.3rem 0;
+    }
+
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .slider-text h2 {
+        font-size: 2rem;
+    }
+
+    .features-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reserve-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+.nav-button i {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+/* Estilos para el menú desplegable */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    position: relative;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Submenú desplegable */
+nav ul li .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--light-bg);
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+nav ul li .dropdown li {
+    display: block;
+}
+
+nav ul li .dropdown li a {
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    display: block;
+    white-space: nowrap;
+}
+
+nav ul li .dropdown li a:hover {
+    background: var(--secondary-color);
+    color: white;
+}
+
+/* Mostrar el submenú al pasar el mouse */
+nav ul li:hover .dropdown {
+    display: block;
+}

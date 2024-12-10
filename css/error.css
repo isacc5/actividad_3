@@ -1,0 +1,88 @@
+
+        /* Estilo base */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: hsla(0, 18%, 97%, 0.984);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+        }
+
+        .text-content {
+            max-width: 600px;
+        }
+
+        .text-content h2 {
+            font-size: 24px;
+            color: #6B7280; /* Gris azulado */
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .text-content h1 {
+            font-size: 72px;
+            color: #0054FF; /* Azul fuerte */
+            font-weight: bold;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .text-content p {
+            font-size: 24px;
+            color: #6B7280; /* Gris azulado */
+            margin-bottom: 20px;
+        }
+
+        .image {
+            max-width: 600px;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Media Queries para pantallas más pequeñas (celulares) */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .text-content h1 {
+                font-size: 48px;
+            }
+
+            .text-content h2 {
+                font-size: 20px;
+            }
+
+            .text-content p {
+                font-size: 18px;
+            }
+
+            .image {
+                max-width: 100%;
+                margin-top: 20px;
+            }
+        }
+
+        /* Media Queries para pantallas muy pequeñas (celulares más pequeños) */
+        @media (max-width: 480px) {
+            .text-content h1 {
+                font-size: 40px;
+            }
+
+            .text-content p {
+                font-size: 16px;
+            }
+        }

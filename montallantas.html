@@ -1,0 +1,153 @@
+<!-- Página de Mantenimiento de Autos -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montallantas</title>
+    <link rel="stylesheet" href="css/mantimiento.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <!-- Barra superior -->
+    <div class="top-bar">
+        <div class="contact-info">
+            <span><i class="fas fa-phone"></i>🖁 +57 3008498299</span>
+            <span><i class="fas fa-envelope"></i>📧 info@autospremium.com</span>
+        </div>
+    </div>
+
+    <!-- Encabezado principal -->
+    <header class="main-header">
+        <div class="logo">
+            <i class="fas fa-tools"></i>
+            <h1>AutoService</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección hero -->
+    <div class="hero">
+        <div class="slider-container">
+            <div class="slider">
+                <img src="https://i.pinimg.com/736x/72/9b/fb/729bfb4e101c7a6dc8582a9cf7529c1e.jpg" alt="carro">
+                <img src="https://i.pinimg.com/736x/57/92/c1/5792c1bdcbd9f695df904d936a7240b6.jpg" alt="carro">
+            </div>
+            <div class="slider-text">
+                <h1>Mantenimiento y Reparaciones de Confianza</h1>
+                <a href="#servicios" class="cta-button">Descubre Nuestros Servicios</a>
+            </div>
+        </div>
+    </div>
+      
+    <!-- Sección de servicios -->
+    <section id="servicios" class="features" data-aos="fade-down" data-aos-duration="900">
+        <main id="reparaciones" data-aos="fade-down" data-aos-duration="900">
+            <h2>Nuestros Servicios</h2>
+           <center><p>Ofrecemos soluciones completas para mantener tu vehículo en las mejores condiciones. Conoce más sobre nuestras especialidades:</p></center> 
+            <section class="cars-gallery">
+                <!-- Tarjeta 1 -->
+                <div class="car-card" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                    <img src="https://i.pinimg.com/736x/f3/9d/14/f39d1486cb98ae073099611c20831384.jpg" alt="Reparación de Llantas">
+                    <div class="car-details">
+                        <h3>Reparación de Llantas</h3>
+                        <p>Solucionamos pinchazos y otros daños para que puedas volver al camino rápidamente.</p>
+                        <h3>Precio: 15.600 COP diarios</h3>
+                        <button onclick="selectCar('Reparación de Llantas', 'https://i.pinimg.com/736x/f3/9d/14/f39d1486cb98ae073099611c20831384.jpg')">
+                            Seleccionar
+                        </button>
+                    </div>
+                </div>
+                 <!-- Modal para selección del carro -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8" alt="Carro" class="modal-image">
+                <h2 id="modal-title"></h2>
+                <p>¿Listo para la aventura?</p>
+                <div class="modal-buttons">
+                    <button onclick="acceptCar()">Aceptar</button>
+                    <button onclick="closeModal()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+                <!-- Tarjeta 2 -->
+                <div class="car-card" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                    <img src="https://i.pinimg.com/736x/63/cf/79/63cf79798e2fb9d71c52aca2780dad8b.jpg" alt="Cambio de Llantas">
+                    <div class="car-details">
+                        <h3>Cambio de Llantas</h3>
+                        <p>Realizamos el montaje y desmontaje profesional de llantas, garantizando un ajuste perfecto</p>
+                        <h3>Precio: 45.500 COP diarios</h3>
+                        <button onclick="selectCar('Cambio de Llantas', 'https://i.pinimg.com/736x/63/cf/79/63cf79798e2fb9d71c52aca2780dad8b.jpg')">
+                            Seleccionar
+                        </button>
+                    </div>
+                </div>
+                <!-- Tarjeta 3 -->
+                <div class="car-card" onmouseover="showDetails(this)" onmouseout="hideDetails(this)">
+                    <img src="https://i.pinimg.com/736x/90/cb/82/90cb82555cc37e962b64c355ce476657.jpg" alt="Balanceo">
+                    <div class="car-details">
+                        <h3>Balanceo</h3>
+                        <p>Revisión y ajuste para un manejo suave y seguro.</p>
+                        <h3>Precio: 30.000 COP diarios</h3>
+                        <button onclick="selectCar('Balanceo', 'https://i.pinimg.com/736x/90/cb/82/90cb82555cc37e962b64c355ce476657.jpg')">
+                            Seleccionar
+                        </button>
+                    </div>
+                </div>
+    </section>
+    <!-- Sección de testimonios -->
+    <section id="testimonios" class="testimonials" data-aos="fade-down" data-aos-duration="900">
+        <h2>Testimonios de Clientes</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p>"¡El mejor servicio de reparación que he tenido! Totalmente recomendable."</p>
+                <div class="rating">★★★★★</div>
+                <p>- María López</p>
+            </div>
+            <div class="testimonial-card">
+                <p>"Profesionales, eficientes y con precios justos. Siempre los elijo para mi auto."</p>
+                <div class="rating">★★★★★</div>
+                <p>- Luis Rodríguez</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer data-aos="fade-down" data-aos-duration="900">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>AutoService</h3>
+                <p>Garantizamos el cuidado total de tu auto con los mejores estándares de calidad.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i>  El Centro, Cartagena de Indias</p>
+                <p><i class="fas fa-phone"></i>+57 3008498299</p>
+                <p><i class="fas fa-envelope"></i> info@autospremium.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Horario</h3>
+                <p>Lunes a Viernes: 8:00 - 20:00</p>
+                <p>Sábados: 9:00 - 18:00</p>
+                <p>Domingos: 10:00 - 16:00</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Alquiler de Autos Premium.</p>
+        </div>
+    </footer>
+    <script src="slider.js"></script>
+    <script src="gallery.js"></script>
+</body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</html>
